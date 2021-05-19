@@ -33,7 +33,7 @@ $( document ).ready(function() {
 
 /*______________________________________slider_____________________________________________________*/ 
     
-    const slider = document.querySelector('.slider').children;
+    const slider = document.getElementsByClassName('slider')[0].children;
     
     for(let val of slider) arr_img_src.push(val.children[0].getAttribute('src').replace(/.+banners\//gi, '').replace(/\_banner.+/gi, '').split('_').join(' '));
 
@@ -214,6 +214,9 @@ const search_line = search.children[1];
                 }
                 if(Object.keys(choises).length) Choised_items();
                 else Order();
+                /*let inputs = document.querySelectorAll('input[type=checkbox]');
+                inputs.forEach(item=>item.checked = false);*/
+                //Order();
             }
         });
 
