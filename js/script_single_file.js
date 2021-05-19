@@ -33,7 +33,7 @@ $( document ).ready(function() {
 
 /*______________________________________slider_____________________________________________________*/ 
     
-    const slider = document.getElementsByClassName('slider')[0].children;
+    const slider = document.querySelector('.slider').children;
     
     for(let val of slider) arr_img_src.push(val.children[0].getAttribute('src').replace(/.+banners\//gi, '').replace(/\_banner.+/gi, '').split('_').join(' '));
 
@@ -136,16 +136,6 @@ const header = document.getElementsByTagName('header')[0];
     </div>`);
 
 const shopping_cart = document.querySelector('.shopping_cart');
-    /*shopping_cart.addEventListener('blur', function(event){
-        event.stopPropagation();
-        this.classList.remove('active');
-        //console.log('blur')
-    });
-    shopping_cart.addEventListener('focus', function(event){
-        event.stopPropagation();
-        this.classList.add('active');
-        //console.log('focus');
-    });*/
 
 const buy_button = document.getElementsByClassName('buy_button')[0];
     buy_button.addEventListener('click', function(event){
@@ -186,15 +176,6 @@ const search_line = search.children[1];
     });
     
     const search_tune = document.querySelector('.search_tune');
-        search_tune.setAttribute('tabindex', 0);
-        search_tune.addEventListener('blur', function(event){
-            event.stopPropagation();
-            this.classList.remove('active');
-        });
-        search_tune.addEventListener('focus', function(event){
-            event.stopPropagation();
-            this.classList.add('active');
-        });
 
     const search_category_stock = document.createElement('div');
         search_category_stock.setAttribute('class', 'search_category_stock');
@@ -233,9 +214,6 @@ const search_line = search.children[1];
                 }
                 if(Object.keys(choises).length) Choised_items();
                 else Order();
-                /*let inputs = document.querySelectorAll('input[type=checkbox]');
-                inputs.forEach(item=>item.checked = false);*/
-                //Order();
             }
         });
 
