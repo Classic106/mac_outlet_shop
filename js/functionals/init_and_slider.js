@@ -1,6 +1,6 @@
 import { variables } from './variables.js';
 
-import{ Change_cart } from './functions.js';
+import{ Change_cart, Modal_page } from './functions.js';
 
 function init_and_slider(){
 
@@ -43,6 +43,10 @@ function init_and_slider(){
                     div.setAttribute("class", `slider_item_div ${(()=>{
                         return (item == 3 || item == 4 || item == 5) ? 'color_black' : '';
                     })()}`);
+                    div.onclick = function(event){
+                        event.stopPropagation();
+                        Modal_page(items[key]);
+                    };
 
                 if(item == 2 || item == 4) div.setAttribute("style", `left: 0; top: 10%; width: ${(()=>(item == 4) ? '35%' : '50%')()}`);
 
