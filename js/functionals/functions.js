@@ -349,13 +349,20 @@ function Add_item_to_catalog(value){
                     <span class="order_counts">1500</span>
                     <span>orders</span>
                 </div>
-            </div>`
-        item.onclick = function(event){
-            event.stopPropagation();
+            </div>
+            <div class="item_favorite"></div>`
+            item.onclick = function(event){
+                event.stopPropagation();
+                debugger
+                if(event.target.classList.contains('item_favorite')){
+                    event.target.classList.toggle('active');
 
-            document.querySelector('.search_tune').style.display = 'none';
-            Modal_page(value);
-        };
+                    (event.target.classList.contains('active')) ?
+                        alert('Add to favorite') : alert('Remove from favorite');
+                }else{
+                    Modal_page(value);
+                }
+            }
 
     const catalog = document.getElementsByClassName('items')[0];
         catalog.append(item);
