@@ -101,7 +101,7 @@ class Cart{
                         
                     });
     
-                if(this.#cart_items[key].amount == 1) btn_deduct.disabled = true;
+                if(this.#cart_items[key].amount <= 1) btn_deduct.disabled = true;
                 
                 const span = document.createElement('span');
                     span.innerText = `${this.#cart_items[key].amount}`;
@@ -122,7 +122,7 @@ class Cart{
                         })(cart);
                     });
                 
-                if(this.#cart_items[key].amount == 4) btn_add.disabled = true;
+                if(this.#cart_items[key].amount >= 4) btn_add.disabled = true;
     
                 const btn_remove = document.createElement('button');
                     btn_remove.setAttribute('class', 'remove_cart_item');
